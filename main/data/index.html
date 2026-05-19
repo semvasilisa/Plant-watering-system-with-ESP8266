@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Watering System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Plant Watering System</h1>
+        
+        <div class="card">
+            <h2>Monitoring</h2>
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-label">Soil moisture</div>
+                    <div class="status-value" id="moisture">--</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Status</div>
+                    <div class="status-value" id="status">--</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Mode</div>
+                    <div class="status-value" id="mode">--</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Relay</div>
+                    <div class="status-value" id="relay">--</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Control section</h2>
+            <div class="mode-switch">
+                <span style="font-weight: bold; font-size: 1.1em;">System operating mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="modeToggle" onchange="toggleMode()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="controls">
+                <button class="btn-on" id="btnOn" onclick="controlRelay('on')" disabled>
+                    Turn on
+                </button>
+                <button class="btn-off" id="btnOff" onclick="controlRelay('off')" disabled>
+                    Turn off
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Parameter settings</h2>
+            <div class="settings-group">
+                <label>Interval between pulses (seconds):</label>
+                <input type="number" id="breakInterval" min="1" max="60" value="10">
+            </div>
+            <div class="settings-group">
+                <label>Break between cycles (minutes):</label>
+                <input type="number" id="cycleInterval" min="1" max="60" value="3">
+            </div>
+            <div class="settings-group">
+                <label>Number of pulses:</label>
+                <input type="number" id="totalPulses" min="1" max="20" value="4">
+            </div>
+            <button class="btn-save" onclick="saveSettings()">
+                Save settings
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

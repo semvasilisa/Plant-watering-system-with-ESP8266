@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(216, 240, 168);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(67,156,11);
+    margin-bottom: 30px;
+    font-size: 2em;
+    /* text-shadow: 2px 2px 4px rgba(0,0,0,0.3); */
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    color: rgb(67,156,11);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid rgb(67,156,11);
+    padding-bottom: 10px;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.status-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    /* border-left: 4px solid #667eea; */
+}
+
+.status-label {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.status-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.mode-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: rgb(67,156,11);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.btn-on {
+    background: #28a745;
+    color: white;
+}
+
+/* .btn-on:hover {
+    background: #218838;
+} */
+
+.btn-off {
+    background: #dc3545;
+    color: white;
+}
+
+/* .btn-off:hover {
+    background: #c82333;
+} */
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.settings-group {
+    margin-bottom: 20px;
+}
+
+.settings-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.settings-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.settings-group input:focus {
+    outline: none;
+    border-color: rgb(67,156,11);
+}
+
+.btn-save {
+    background: rgb(67,156,11);
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* .btn-save:hover {
+    background: #5568d3;
+} */
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.status-ok {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-watering {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.status-dry {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status-humid {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.loading {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+}
